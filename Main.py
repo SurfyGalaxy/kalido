@@ -1,7 +1,7 @@
 """
 - Escape sequences start with \x1b
 - CSI sequences usually start with \x1b[
-- CSI sequences end with a single final byte in @ A-Z [ \ ] ^ _ ` a-z ~
+- CSI sequences end with a single final byte in @ A-Z [ \\ ] ^ _ ` a-z ~
 - If the final byte is 'm', the sequence is a colour/style code (SGR)
     → discard the entire sequence
 - Otherwise, preserve the sequence unchanged
@@ -9,6 +9,7 @@
 """
 
 import sys
+import functions as func
 import argparse
 
 STATE = "NORMAL"
@@ -33,15 +34,8 @@ args = parser.parse_args()
 stops = args.stops
 count = args.count
 # This is a list of hex codes with the # still
-
-stops = [code[1:] for code in stops] # Strip the leading # to make my life easier
-
-for code in stops:
-    red = int(code[:2], 16)
-    green = int(code[2:4], 16)
-    blue = int(code[4:], 16)
-    rgb_stops.append((red, green, blue))
-print(rgb_stops)
+stops = func.create_gradient(stops, count)
+index = 0
 
 while True:
     c = sys.stdin.read(1)
@@ -53,8 +47,11 @@ while True:
             STATE = "ESC"
             seq = c
         else:
-            # I presume colouriser goes here?
-            sys.stdout.write(c)
+            sys.stdout.write(func.colourise(stops, c, index))
+            if index == len(stops) -1:
+                index = 0
+            else:
+                index += 1
 
     elif STATE == "ESC":
         seq += c
