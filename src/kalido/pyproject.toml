@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kalido"
+version = "1.0.0"
+authors = [
+    {name = "SurfyGalaxy", email = "surfygalaxy@proton.me"},
+]
+description = "A terminal colouriser"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license = {file = "LICENSE"}
+dependencies = [
+    "pyyaml",
+]
+
+[project.scripts]
+kalido = "kalido.__main__:main"
