@@ -1,0 +1,16 @@
+rainbow: ["#E40303", "#FF8C00", "#FFED00", "#008026", "#004CFF", "#732982", "#E40303"]
+lesbian: ["#D52D00", "#FF9A56", "#FFFFFF", "#D362A4", "#A30262", "#D362A4", "#FFFFFF", "#FF9A56", "#D52D00"]
+gay: ["#078970", "#26CEAA", "#98E8C1", "#FFFFFF", "#7BADE2", "#5049CC", "#3D1A78", "#5049CC", "#7BADE2", "#FFFFFF", "#98E8C1", "#26CEAA", "#078970"]
+bisexual: ["#D60270", "#9B4F96", "#0038A8", "#9B4F96", "#D60270"]
+transgender: ["#5BCEFA", "#F5A9B8", "#FFFFFF", "#F5A9B8", "#5BCEFA"]
+queer: ["#B57EDC", "#FFFFFF", "#4A8123", "#FFFFFF", "#B57EDC"]
+intersex: ["#FFD800", "#790293", "#FFD800"]
+aroace: ["#ef9007", "#f6d317", "#ffffff", "#45bcee", "#1e3f54", "#45bcee", "#ffffff", "#f6d317", "#ef9007"] 
+all: ["#E40303", "#FF8C00", "#FFED00", "#008026", "#004CFF", "#732982", # Rainbow
+ "#D52D00", "#FF9A56", "#FFFFFF", "#D362A4", "#A30262", # Lesbian
+ "#078970", "#26CEAA", "#98E8C1", "#FFFFFF", "#7BADE2", "#5049CC", "#3D1A78", # Gay
+ "#D60270", "#9B4F96", "#0038A8", # Bisexual
+ "#5BCEFA", "#F5A9B8", "#FFFFFF", # Transgender
+ "#B57EDC", "#FFFFFF", "#4A8123", # Queer
+ "#FFD800", "#790293", "#FFD800", # Intersex
+ "#ef9007", "#f6d317", "#ffffff", "#45bcee", "#1e3f54", "#E40303"] # Aroace
