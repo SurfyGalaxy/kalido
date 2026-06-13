@@ -12,7 +12,7 @@ import sys
 import os
 import pathlib
 import yaml
-import functions as func
+from kalido import functions as func
 import argparse
 import random
 
@@ -37,13 +37,13 @@ parser.add_argument(
 parser.add_argument(
     "--count",
     type=int,
-    default=20,
+    default=5,
     help="The amount of intermediate values to add between stops",
 )
 parser.add_argument(
     "--size",
     type=int,
-    default=5,
+    default=1,
     help="How large each colour is before moving to next colour"
 )
 args = parser.parse_args()
