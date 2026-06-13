@@ -60,7 +60,7 @@ elif stops[0] == "random":
 
     
 
-stops = func.create_gradient(stops, count + 1)
+stops = func.create_gradient(stops, count)
 index = 0
 size_index = size
 
