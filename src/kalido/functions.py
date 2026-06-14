@@ -46,7 +46,7 @@ def create_gradient(stops, count):
     return gradient
 
 def colour_char(char: str, colour: tuple) -> str:
-    return f"\x1b[38;2;{colour[0]};{colour[1]};{colour[2]}m{char}\x1b[0m"
+    return f"\x1b[38;2;{colour[0]};{colour[1]};{colour[2]}m{char}"
 
 def colourise(stops, char, index):
     colour = stops[index]

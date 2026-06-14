@@ -1,13 +1,3 @@
-"""
-- Escape sequences start with \x1b
-- CSI sequences usually start with \x1b[
-- CSI sequences end with a single final byte in @ A-Z [ \\ ] ^ _ ` a-z ~
-- If the final byte is 'm', the sequence is a colour/style code (SGR)
-    → discard the entire sequence
-- Otherwise, preserve the sequence unchanged
-- Everything outside escape sequences is normal printable text
-"""
-
 import sys
 import os
 import pathlib
@@ -90,6 +80,8 @@ while True:
 
         if c == "[":
             STATE = "CSI"
+        elif c == "]":
+            STATE = "OSC"
         else:
             # not CSI, just output and reset
             sys.stdout.write(seq)
@@ -108,6 +100,13 @@ while True:
             # always reset once
             STATE = "NORMAL"
             seq = ""
+    
+    elif STATE == "OSC":
+        seq += c
 
-sys.stdout.write('\n')
-sys.stdout.flush()
+        if c == "\x07" or seq.endswith("\x1b\\"): # BEL or ST (final bytes)
+            sys.stdout.write(seq)
+            sys.stdout.flush()
+
+            STATE = "NORMAL"
+            seq = ""
