@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kalido"
-version = "1.0.0"
+version = "1.2.0"
 authors = [
     {name = "SurfyGalaxy", email = "surfygalaxy@proton.me"},
 ]
@@ -23,3 +23,6 @@ dependencies = [
 
 [project.scripts]
 kalido = "kalido.__main__:main"
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml", "*.yml"]
